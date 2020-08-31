@@ -9,6 +9,7 @@ import {
 import Product from './pages/Product';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import OwnProduct from './pages/OwnProduct'
 
 function App() {
   const [ isLoggin, setIsLoggin ] = useState(false)
@@ -58,6 +59,9 @@ function App() {
         </Route>
         <Route exact path='/'>
           {isLoggin ? <Product/> : <Redirect exact to="/login"/> }
+        </Route>
+        <Route exact path='/product'>
+          {isLoggin ? <OwnProduct/> : <Redirect exact to="/login"/> }
         </Route>
       </Switch>
     </Router>
